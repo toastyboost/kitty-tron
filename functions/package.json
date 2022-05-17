@@ -1,0 +1,38 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "dev": "npm run build -- --watch | firebase emulators:start --only functions",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.9",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.20.0",
+    "node-fetch": "^2.2.4",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "uid": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "@types/synaptic": "^1.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
